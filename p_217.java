@@ -14,10 +14,10 @@ class Solution {
     }
 }
 
-//leetcode url: https://leetcode.com/problems/contains-duplicate/
+// leetcode url: https://leetcode.com/problems/contains-duplicate/
 public class p_217 {
     public static void main(String[] args) {
-        int[] input = {1, 2, 3, 1};
+        int[] input = { 1, 2, 3, 1 };
         Solution solution = new Solution();
         Boolean result = solution.containsDuplicate(input);
         System.out.println("The result is: " + result);
