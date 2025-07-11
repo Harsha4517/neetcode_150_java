@@ -1,27 +1,20 @@
-class ListNode {
+class ReverseListNode {
     int val;
-    ListNode next;
+    ReverseListNode next;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
+    ReverseListNode(int val) {
         this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
+        this.next = null;
     }
 }
 
 class ReverseListSolution {
-    public ListNode reverseList(ListNode head) {
+    public ReverseListNode reverseList(ReverseListNode head) {
         if (head == null) {
             return null;
         }
 
-        ListNode newHead = head;
+        ReverseListNode newHead = head;
         if (head.next != null) {
             newHead = reverseList(head.next);
             head.next.next = head;

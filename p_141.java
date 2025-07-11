@@ -2,16 +2,9 @@ class ListNode {
     int val;
     ListNode next;
 
-    ListNode() {
-    }
-
     ListNode(int val) {
         this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
+        this.next = null;
     }
 }
 
@@ -31,12 +24,20 @@ class HasCycleSolution {
 }
 
 // leetcode url: https://leetcode.com/problems/linked-list-cycle/
-// public class p_141 {
-// public static void main(String[] args) {
-// int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-// int target = 0;
-// SortedRotatedSearchSolution solution = new SortedRotatedSearchSolution();
-// int result = solution.search(nums, target);
-// System.out.println("The result is: " + result);
-// }
-// }
+public class p_141 {
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(3);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(0);
+        ListNode node4 = new ListNode(-4);
+
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node2;
+
+        HasCycleSolution solution = new HasCycleSolution();
+        boolean result = solution.hasCycle(node1);
+        System.out.println("The result is: " + result);
+    }
+}
