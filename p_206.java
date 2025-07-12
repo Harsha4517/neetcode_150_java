@@ -1,20 +1,12 @@
-class ReverseListNode {
-    int val;
-    ReverseListNode next;
-
-    ReverseListNode(int val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+import java.util.ArrayList;
 
 class ReverseListSolution {
-    public ReverseListNode reverseList(ReverseListNode head) {
+    public ListNode reverseList(ListNode head) {
         if (head == null) {
             return null;
         }
 
-        ReverseListNode newHead = head;
+        ListNode newHead = head;
         if (head.next != null) {
             newHead = reverseList(head.next);
             head.next.next = head;
@@ -26,12 +18,25 @@ class ReverseListSolution {
 }
 
 // leetcode url: https://leetcode.com/problems/reverse-linked-list/
-// public class p_33 {
-// public static void main(String[] args) {
-// int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-// int target = 0;
-// SortedRotatedSearchSolution solution = new SortedRotatedSearchSolution();
-// int result = solution.search(nums, target);
-// System.out.println("The result is: " + result);
-// }
-// }
+public class p_206 {
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        ReverseListSolution solution = new ReverseListSolution();
+        ListNode result = solution.reverseList(node1);
+        ArrayList<Integer> list = new ArrayList<>();
+        while (result != null) {
+            list.add(result.val);
+            result = result.next;
+        }
+        System.out.println("The result is: " + list.toString());
+    }
+}

@@ -1,12 +1,4 @@
-class MergeTwoListsListNode {
-    int val;
-    ListNode next;
-
-    MergeTwoListsListNode(int val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+import java.util.ArrayList;
 
 class MergeTwoListsSolution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
@@ -35,12 +27,26 @@ class MergeTwoListsSolution {
 }
 
 // leetcode url: https://leetcode.com/problems/merge-two-sorted-lists/
-// public class p_33 {
-// public static void main(String[] args) {
-// int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-// int target = 0;
-// SortedRotatedSearchSolution solution = new SortedRotatedSearchSolution();
-// int result = solution.search(nums, target);
-// System.out.println("The result is: " + result);
-// }
-// }
+public class p_21 {
+    public static void main(String[] args) {
+        ListNode list1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(4);
+        ListNode list2 = new ListNode(1);
+        ListNode node4 = new ListNode(3);
+        ListNode node5 = new ListNode(4);
+
+        list1.next = node2;
+        node2.next = node3;
+        list2.next = node4;
+        node4.next = node5;
+        MergeTwoListsSolution solution = new MergeTwoListsSolution();
+        ListNode result = solution.mergeTwoLists(list1, list2);
+        ArrayList<Integer> list = new ArrayList<>();
+        while (result != null) {
+            list.add(result.val);
+            result = result.next;
+        }
+        System.out.println("The result is: " + list.toString());
+    }
+}
