@@ -1,2 +1,4 @@
 # neetcode_150_java
-Solving Neetcode 150 DSA Sheet using Java
+
+Solutions to Neetcode 150 Sheet
+Language: JAVA
